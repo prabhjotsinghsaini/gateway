@@ -1,0 +1,21 @@
+logging:
+  level:
+    org.springframework.security: DEBUG
+    org.springframework.cloud: DEBUG
+    org.springframework.web: WARN
+    
+server:
+  port: 9090
+  
+spring:
+  aop:
+    proxy-target-class: true
+  
+zuul:  
+  routes:    
+    credentials:      
+      path: /credentials/**
+      url: https://ce-search-qa.hylatest.com/api/program/ATT/trade/credentials
+    modelsearch:
+      path: /models/**
+      url: https://att.tradein-uat.erecyclingcorps.com/api/rest/v2/models
